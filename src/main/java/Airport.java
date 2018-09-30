@@ -35,6 +35,15 @@ public class Airport {
     public void createFlight(String flightNumber, AirportCode destination, Plane plane) {
         Flight flight = new Flight(flightNumber, destination, plane);
         addFlight(flight);
+        assignPlaneFromHangar(plane);
+    }
+
+    private void assignPlaneFromHangar(Plane thePlane) {
+        for(int i = 0; i < hangars.size(); i++) {
+            if (hangars.get(i).containsPlane(thePlane)) {
+                hangars.get(i).removePlane(thePlane);
+            }
+        }
     }
 
     public int totalPassengersOnFlight(Flight flight) {

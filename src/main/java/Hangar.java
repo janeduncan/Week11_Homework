@@ -28,4 +28,16 @@ public class Hangar {
         this.planes.add(plane);
     }
 
+    public Plane removePlane(Plane plane) {
+        return this.planes.remove(this.planes.indexOf(plane));
+    }
+
+    public boolean containsPlane(Plane thePlane) {
+        for (Plane plane : planes) {
+            if (plane == thePlane) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
