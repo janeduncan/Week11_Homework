@@ -28,8 +28,4 @@ public class Hangar {
         this.planes.add(plane);
     }
 
-    public void remove(Plane plane) {
-        this.planes.remove(plane);
-    }
-
 }
